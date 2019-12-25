@@ -20,7 +20,7 @@ class CheckLogin
             return $next($request);
         }
         else{
-            return redirect()->route('view_login')->with('error','Mày đã đăng nhập đâu');
+            return redirect()->route('view_login')->with('error','Vui lòng đăng nhập đụ má');
         }
     }
 }
