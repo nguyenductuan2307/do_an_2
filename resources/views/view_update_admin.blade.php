@@ -4,6 +4,10 @@
 	<title></title>
 </head>
 <body>
+<div>	
+		@include('view_menu')
+</div>
+<div style="padding-top: 100px;  " >
 <form method="post"	action="{{ route('process_update_admin',['ma' => $each->ma]) }}" >
 		{{ csrf_field() }} 
 	<table>
@@ -37,5 +41,6 @@
 	</table>
 	<button> Sửa </button>
 </form>
+</div>
 </body>
 </html>

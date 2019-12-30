@@ -13,10 +13,7 @@ use App\Model\LoginModel;
 class logincontroller extends BaseController
 {
     use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
-    public function test()
-    {
-    	return view('layer.master');
-    }
+    
     public function login()
     {
     	return view('view_login');
@@ -32,7 +29,7 @@ class logincontroller extends BaseController
 			$rq->session()->put('ma',$array[0]->ma);
 			$rq->session()->put('ten',$array[0]->ten);
 
-			return redirect()->route('view_all');
+			return redirect()->route('view_menu');
 		}
 		else{
 			return redirect()->route('view_login')->with('error','Nhập sai rồi');
@@ -42,5 +39,9 @@ class logincontroller extends BaseController
     {
     	$rq->session()->flush();
 		return redirect()->route('view_login')->with('success','Đăng xuất thành công');
+    }
+    function menu()
+    {
+        return view('view_menu');
     }
 }

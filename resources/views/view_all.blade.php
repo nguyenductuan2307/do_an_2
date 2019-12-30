@@ -4,8 +4,11 @@
     <title></title>
 </head>
 <body>
+<div>	
+		@include('view_menu')
+</div>
+<div style="padding-top: 100px;  " > 
 	<a href="{{ route('view_insert') }}"> <button>Thêm</button></a>
-
     <table width="100%" border="1" >
     	<tr>
     		<th> Mã </th>
@@ -25,5 +28,6 @@
 		</tr>
 	    @endforeach
     </table>
+</div>
 </body>
 </html>

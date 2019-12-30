@@ -4,6 +4,10 @@
 	<title></title>
 </head>
 <body>
+	<div>	
+		@include('view_menu')
+</div>
+<div style="padding-top: 100px;  " >
 <form method="post"	action="{{ route('process_insert_admin') }}" >
 		{{ csrf_field() }} 
 	<table>
@@ -35,5 +39,6 @@
 	</table>
 	<button> Thêm </button>
 </form>
+</div>
 </body>
 </html>
