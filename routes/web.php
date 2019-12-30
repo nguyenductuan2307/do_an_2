@@ -19,6 +19,12 @@ Route::get('admin/delete/{ma}', 'admincontroller@delete')->name('delete_admin');
 Route::get('admin/view_update/{ma}', 'admincontroller@view_update_admin')->name('view_update_admin');
 Route::post('admin/process_update/{ma}', 'admincontroller@process_update_admin')->name('process_update_admin');
 //Admin///////////////////////////////////////////////////////////////////////
+//// Sản phẩm ////////////////////////////////////////////////////////////////
+Route::get('sanpham','sanphamcontroller@view_all')->name('view_all_sanpham');
+Route::get('sanpham/view_insert', 'sanphamcontroller@view_insert')->name('view_insert_san_pham');
+route::post('sanpham/process_insert_san_pham','sanphamcontroller@process_insert_san_pham')->name('process_insert_san_pham');
+
+
 });
 
  

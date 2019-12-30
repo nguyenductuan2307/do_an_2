@@ -9,10 +9,10 @@ class admincontroller extends Controller
 {
     function view_all(){
     	$array = AdminModel::get_all();
-    	return view('view_all_admin',compact('array'));
+    	return view('admin.view_all_admin',compact('array'));
     }
     function view_insert(){
-    	return view('view_insert_admin');
+    	return view('admin.view_insert_admin');
     }
     function process_insert_admin(Request $rq){
     	$admin = new AdminModel();
@@ -30,7 +30,7 @@ class admincontroller extends Controller
     }
     function view_update_admin($ma){
         $each = AdminModel::get_one($ma);
-        return view('view_update_admin',compact('each'));
+        return view('admin.view_update_admin',compact('each'));
     }
     function process_update_admin($ma, Request $rq){
         $admin = new AdminModel();
