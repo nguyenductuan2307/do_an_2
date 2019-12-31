@@ -29,7 +29,7 @@
 			 	 <img src="{{$each->anh}}" height="100px"; width="100px" >  
 			 </td>
 			 <td>
-			 	<a href=""> Sửa </a>
+			 	<a href="{{ route('view_update_san_pham',['ma' => $each-> ma]) }}"> Sửa </a>
 			 </td>
 			 <td>
 			 	<a href=""> Xóa </a>

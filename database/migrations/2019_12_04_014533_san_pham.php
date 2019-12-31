@@ -16,11 +16,9 @@ class Sanpham extends Migration
         Schema::create('san_pham', function (Blueprint $table) {
            $table->increments('ma');
            $table->string('ten',50);
-           $table->integer('so_luong');
-           $table->integer('nha_cung_cap')->unsigned();
-           $table->foreign('nha_cung_cap')->references('ma')->on('nha_cung_cap');
-           $table->date('ngay_nhap');
-           $table->date('ngay_het_han');
+           $table->string('anh',50);
+
+           
         });
 
     }

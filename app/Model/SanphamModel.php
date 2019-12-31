@@ -8,7 +8,6 @@ class SanphamModel
 {
 	public $ten;
 	public $anh;
-	public $nha_cung_cap;
 	
 	static function get_all(){
 		$array = DB::select("select*from san_pham");
@@ -16,6 +15,14 @@ class SanphamModel
 	}
 	public function insert(){
 		DB::insert("insert into san_pham(ten,anh) values(?,?)",[$this->ten,$this->anh]);
+	}
+	static  function get_one($ma){
+			$array = DB::select("select*from san_pham where ma = ?",[$ma]);
+			return $array[0];
+	}
+	public function update(){
+			DB::update(" update san_pham set ten=?, anh=? where ma=?  ",
+			[$this->ten,$this->anh]);
 	}
 	
 }

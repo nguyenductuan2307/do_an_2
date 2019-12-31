@@ -21,5 +21,17 @@ class sanphamcontroller extends Controller
     	$san_pham ->insert();
     	return redirect()->route('view_all_sanpham');
     }
-    
+    static function view_update($ma){
+        $each = SanphamModel::get_one($ma);
+        return view('san_pham.view_update_san_pham',compact('each'));
+    }
+    function process_update($ma, Request $rq){
+        $san_pham = new SanphamModel();
+        $san_pham-> ma = $ma;
+        $san_pham -> ten =$rq ->get('ten');
+        $san_pham -> anh =$rq ->get('anh');
+        $san_pham -> update();
+        return redirect()->route('view_all_san_pham');
+
+    }
 }

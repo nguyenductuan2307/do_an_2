@@ -95,6 +95,8 @@
 }
 body {
    background-image: url("https://previews.123rf.com/images/nasaimages/nasaimages1809/nasaimages180900191/108687565-abstract-scientific-background-galaxy-and-nebula-in-space-.jpg");
+   background-repeat: no-repeat;
+   background-size: cover;
 }
 	</style>
 </head>
@@ -108,10 +110,10 @@ body {
 		    <form class="login-form" method="post" action="{{ route('process_login') }}" >
 		    	{{csrf_field()}}
 			@if (Session::has('error'))
-                <h1>{{Session::get('error')}}</h1>
+                <h1>  {{Session::get('error')}} </h1> 
             @endif
             @if (Session::has('success'))
-                <h1>{{Session::get('success')}}</h1>
+                 <h1> {{Session::get('success')}} </h1>  
             @endif
 		      <input type="email" placeholder="username" name="email" />
 		      <input type="password" placeholder="password" name="mat_khau" />

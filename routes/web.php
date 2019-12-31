@@ -23,6 +23,9 @@ Route::post('admin/process_update/{ma}', 'admincontroller@process_update_admin')
 Route::get('sanpham','sanphamcontroller@view_all')->name('view_all_sanpham');
 Route::get('sanpham/view_insert', 'sanphamcontroller@view_insert')->name('view_insert_san_pham');
 route::post('sanpham/process_insert_san_pham','sanphamcontroller@process_insert_san_pham')->name('process_insert_san_pham');
+Route::get('sanpham/view_update/{ma}','sanphamcontroller@view_update')->name('view_update_san_pham');
+Route::post('sanpham/process_update/{ma}','sanphamcontroller@process_update')->name('process_update_san_pham');
+
 
 
 });
