@@ -31,6 +31,8 @@ Route::group(['middleware' => 'CheckLogin'],function(){
 					Route::get('view_update_so_luong_kho','khocontroller@view_update_so_luong_kho')->name('view_update_so_luong_kho');
 					Route::get('process_so_luong','khocontroller@process_so_luong')->name('process_so_luong'); 
 
+					Route::get('view_xem_chi_tiet','khocontroller@view_xem_chi_tiet')->name('view_xem_chi_tiet');
+
 
 });
 

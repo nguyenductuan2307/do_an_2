@@ -40,16 +40,16 @@
 					 <img src="{{$san_pham->anh}}" height="100px"; width="100px" >  
 				</td>
 				<td>
-					{{$san_pham->so_luong_con_lai}}
+					{{$san_pham->so_luong_con_lai_hom_qua}}
 				</td>
 				<td>
-					<input type="number" name="array_nhap[{{$san_pham->ma}}]">
+					<input type="number" name="array_nhap[{{$san_pham->ma}}]" value="{{ $array_nhap[$san_pham->ma] ?? 0 }}">
 				</td>
 				<td>
-					<input type="number" name="array_xuat[{{$san_pham->ma}}]">
+					<input type="number" name="array_xuat[{{$san_pham->ma}}]" value="{{ $array_xuat[$san_pham->ma] ?? 0 }}">
 				</td>
 				<td>
-					
+					 {{ $san_pham->so_luong_con_lai_hom_nay }}
 				</td>
 			</tr>
 			@endforeach
