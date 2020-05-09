@@ -37,6 +37,19 @@ class KhoModel
 			GROUP by san_pham.ma");
 		return $array;
 	}
+
+	public function update(){
+		DB::update('update kho set nhap=? , xuat=? where ma_san_pham=?
+			 ',[
+			 
+			$this->nhap,
+			$this->xuat,
+			$this->ma_san_pham,
+		]);
+	}
+
+
+
 	static function get_so_luong_hom_nay($ngay){
 		$array = DB::select("
 			SELECT 

@@ -1,13 +1,5 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<title></title>
-</head>
-<body>
-
-<div>	
-		@include('view_menu')
-</div>
+@extends('layer.master')
+@section('body')
 <div style="padding-top: 100px;  " >
 <form action="{{ route('view_update_so_luong_kho') }}" method="get"  >
 	Chọn Ngày tháng
@@ -54,11 +46,21 @@
 			</tr>
 			@endforeach
 		</table>
+
+		<div style="float: right;" >
+			Nhân viên tồn kho 
+			<select>
+			@foreach ($array as $each)
+				<option> {{$each->ten}} </option>
+			@endforeach
+			</select>
+		</div>
+
+		<br>
+
 		<div style="float: right;" >
 					<button> Tồn kho </button>
 		</div>
 </form>
-</div>
-</body>
-</html>
+@endsection
 

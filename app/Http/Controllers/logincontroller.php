@@ -29,7 +29,7 @@ class logincontroller extends BaseController
 			$rq->session()->put('ma',$array[0]->ma);
 			$rq->session()->put('ten',$array[0]->ten);
 
-			return redirect()->route('view_menu');
+			return redirect()->route('layer.master');
 		}
 		else{
 			return redirect()->route('view_login')->with('error','Nhập sai rồi');
@@ -42,6 +42,6 @@ class logincontroller extends BaseController
     }
     function menu()
     {
-        return view('view_menu');
+        return view('layer.menu');
     }
 }

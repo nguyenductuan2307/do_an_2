@@ -1,21 +1,17 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<title></title>
-</head>
-<body>
-<div>
-@include('view_menu')
-</div>
+@extends('layer.master')
+@section('body')
 <div style="padding-top: 100px;  " >
-<button> <a href="{{ route('view_insert_san_pham') }}"> Thêm </a> </button>
-<table width="100%" border="1" >
+    <a href="{{ route('view_insert_san_pham') }}"> 
+    	<button type="button" class="btn btn-primary btn-xs dt-edit" style="width: 150px; height: 40px;">
+			<span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> Thêm </button>
+	</a>
+<table width="100%" >
 		<tr>
 			<th> Mã </th>
 			<th> Tên </th>
 			<th> Ảnh </th>
-			<th> Sửa </th>
-			<th> Xóa </th>
+			<th style="text-align:center;width:100px;">Sửa</th>
+			<th style="text-align:center;width:100px;">Xóa</th>
 		</tr>
 		@foreach ($array as $each)
 	 	<tr>
@@ -29,15 +25,22 @@
 			 	 <img src="{{$each->anh}}" height="100px"; width="100px" >  
 			 </td>
 			 <td>
-			 	<a href="{{ route('view_update_san_pham',['ma' => $each-> ma]) }}"> Sửa </a>
+			 	<a href="">
+			 		<button class="btn btn-primary btn-xs dt-edit" style="width:100px; height: 30px">
+								<span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> Sửa
+					</button>
+			 	</a>
 			 </td>
 			 <td>
-			 	<a href=""> Xóa </a>
+			 	<a href="">
+			 		<button class="btn btn-danger btn-xs dt-delete" style="width:100px; height: 30px">
+								<span class="glyphicon glyphicon-remove" aria-hidden="true"></span> Xóa
+					</button>
+			 	</a>
 			 </td>
 		</tr>
 		@endforeach
 	
 </table>
 </div>
-</body>
-</html>
+@endsection

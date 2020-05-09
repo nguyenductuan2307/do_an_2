@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use App\Model\SanphamModel;
 use App\Model\NgaythangModel;
 use App\Model\KhoModel;
+use App\Model\AdminModel;
+
 
 class khocontroller extends Controller
 {
@@ -18,7 +20,8 @@ class khocontroller extends Controller
         $array_san_pham = KhoModel::get_so_luong_truoc_ngay($ngay);
 
         $array_so_luong_hom_nay = KhoModel::get_so_luong_hom_nay($ngay);
-
+        
+        $array = AdminModel::get_all();
 
         $array_nhap = [];
         $array_xuat = [];
@@ -31,8 +34,7 @@ class khocontroller extends Controller
             $array_xuat[$ma_san_pham] = $xuat;
         }
 
-
-        return view('kho.view_update_so_luong_kho',compact('ngay','array_san_pham','array_nhap','array_xuat'));
+        return view('kho.view_update_so_luong_kho',compact('array','ngay','array_san_pham','array_nhap','array_xuat'));
     }
     public function process_so_luong(Request $rq){
         $array_nhap        = $rq->get('array_nhap');
@@ -45,14 +47,11 @@ class khocontroller extends Controller
             $kho->ma_san_pham = $ma_san_pham;
             $kho->nhap = $so_luong_nhap;
             $kho->xuat = $array_xuat[$ma_san_pham];
+            $kho->ma_admin = $rq->session()->get('ma');
             $kho->delete();
             $kho->insert();
         }
         return redirect()->route('view_update_so_luong_kho',['ngay' => $ngay]);
-    }
-
-    public function view_xem_chi_tiet()  {
-        return view('chi_tiet.view_xem_chi_tiet_theo_ngay');
     }
 
 }

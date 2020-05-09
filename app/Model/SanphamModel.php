@@ -24,5 +24,8 @@ class SanphamModel
 			DB::update(" update san_pham set ten=?, anh=? where ma=?  ",
 			[$this->ten,$this->anh]);
 	}
-	
+	static function get_moi_nhat(){
+		$array = DB::select("select max(ma) as ma_lon_nhat from san_pham");
+		return $array[0]->ma_lon_nhat;
+	}
 }

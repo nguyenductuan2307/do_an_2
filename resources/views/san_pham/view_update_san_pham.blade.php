@@ -1,12 +1,5 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<title></title>
-</head>
-<body>
-<div>	
-		@include('view_menu')
-</div>
+@extends('layer.master')
+@section('body')
 <div style="padding-top: 100px;  " >
 			<form method="post"	action="{{ route('process_update_san_pham',['ma' => $each->ma]) }} " >
 				{{ csrf_field() }} 
@@ -21,3 +14,4 @@
 </div>	  
 </body>
 </html>
+@endsection

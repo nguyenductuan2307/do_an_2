@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Model\SanphamModel;
+use App\Model\KhoModel;
 
 class sanphamcontroller extends Controller
 {
@@ -16,9 +17,20 @@ class sanphamcontroller extends Controller
     }
     function process_insert_san_pham(Request $rq){
     	$san_pham = new SanphamModel();
-    	$san_pham -> ten =$rq ->get('ten');
-    	$san_pham -> anh =$rq ->get('anh');
+    	$san_pham ->ten = $rq ->get('ten');
+    	$san_pham ->anh = $rq ->get('anh');
     	$san_pham ->insert();
+
+        $ma_san_pham = SanphamModel::get_moi_nhat();
+
+        $kho = new KhoModel();
+        $kho->ma_san_pham = $ma_san_pham;
+        $kho->ngay = $rq->get('ngay');
+        $kho->nhap = $rq->get('nhap');
+        $kho->xuat = 0;
+        $kho->ma_admin = $rq->session()->get('ma');
+        $kho->insert();
+
     	return redirect()->route('view_all_sanpham');
     }
     static function view_update($ma){

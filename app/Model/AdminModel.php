@@ -12,8 +12,8 @@ class AdminModel
 	public $email;
 	public $mat_khau;
 	static function get_all(){
-		$array = DB::select("select*from admin");
-			return $array;
+		$array = DB::select("select * from admin");
+		return $array;
 	}
 	public function insert(){
 			DB::insert("insert into admin(ten,ngay_sinh,gioi_tinh,email,mat_khau) values(?,?,?,?,?)",

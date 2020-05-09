@@ -3,12 +3,8 @@
 Route::group(['middleware' => 'CheckLogin'],function(){
 
 			Route::get('', 'logincontroller@menu')->name('view_menu');	
-			// Nhà cung cấp////////////////////////////////////////////////////////////////
-					Route::get('ncc', 'nhacungcapcontroller@view_all')->name('view_all');
-					Route::get('ncc/view_insert', 'nhacungcapcontroller@view_insert')->name('view_insert');
-					Route::post('ncc/process_insert_ncc', 'nhacungcapcontroller@process_insert_ncc')->name('process_insert_ncc');
-					Route::get('ncc/delete/{ma}', 'nhacungcapcontroller@delete')->name('delete');
-					// Nhà cung cấp///////////////////////////////////////////////////////////////
+					Route::get('layer','layercontroller@layer')->name('layer.master');
+			
 
 
 					// Admin////////////////////////////////////////////////////////////////////

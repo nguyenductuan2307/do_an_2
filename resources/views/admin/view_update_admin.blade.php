@@ -1,24 +1,17 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<title></title>
-</head>
-<body>
-<div>	
-		@include('view_menu')
-</div>
+@extends('layer.master')
+@section('body')
 <div style="padding-top: 100px;  " >
 <form method="post"	action="{{ route('process_update_admin',['ma' => $each->ma]) }}" >
 		{{ csrf_field() }} 
-	<table>
+	<table width="60%">
 		<tr>
 			<td>Tên</td>
-			<td><input type="text" name="ten" value="{{$each->ten}}" ></td>
+			<td><input class="form-control" minlength="2" type="text" name="ten" value="{{$each->ten}}" ></td>
 		</tr>
 		<br>
 		<tr>
 			<td> Ngày sinh </td>
-			<td> <input type="date" name="ngay_sinh" value="{{$each->ngay_sinh}}" > </td>
+			<td> <input class="form-control" minlength="2" type="date" name="ngay_sinh" value="{{$each->ngay_sinh}}" > </td>
 		</tr>
 		<br>
 		<tr>
@@ -29,27 +22,29 @@
 					checked
 				@endif
 				>
-				Nam<br>
+				Nam 
 	    		<input type="radio" name="gioi_tinh" value="0"
 				@if ($each->gioi_tinh==0)
 					checked
 				@endif
-	    		> Nữ<br>	
+	    		> Nữ 	
 	    	</td>
 		</tr>
 		<br>
 		<tr>
 			<td>Email</td>
-			<td><input type="email" name="email" value="{{$each->email}}" ></td>
+			<td><input class="form-control" minlength="2" type="email" name="email" value="{{$each->email}}" ></td>
 		</tr>
 		<br>
 		<tr>
 			<td>  Mật khẩu</td>
-			<td><input type="password" name="mat_khau" value="{{$each->mat_khau}}" ></td>
+			<td><input class="form-control" minlength="2" type="password" name="mat_khau" value="{{$each->mat_khau}}" ></td>
 		</tr> 	          
 	</table>
-	<button> Sửa </button>
+	<button  class="btn btn-primary btn-xs dt-edit" style="width: 150px; height: 40px;">
+				<span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> 
+								Sửa
+	</button>
 </form>
 </div>
-</body>
-</html>
+@endsection

@@ -33,17 +33,15 @@
 	color: white;
 	height: 25px;	
 		}
-	
 </style>
 
 </head>
 <body>
 	<div id="menu" > 
 	<ul>
-		<li> <a href="{{ route('view_all_admin') }}"> Thông tin nhân viên </a> </li>
-		<li> <a href="{{ route('view_all_sanpham') }}"> Quản lí Sản phảm  </a> </li>
-		 
-		<li> <a href="{{ route('view_chon_kho_with_ngay') }}"> Kho </a> </li>
+		<li> <a href="admin"> Thông tin nhân viên </a> </li>
+		<li> <a href="sanpham"> Quản lí Sản phảm  </a> </li>
+		<li> <a href="ncc"> Quản lí nhà cung cấp  </a></li>
 	</ul>
 	</div>
 	<button style="float: right;" ><a href="logout"> Logout </a></button>
