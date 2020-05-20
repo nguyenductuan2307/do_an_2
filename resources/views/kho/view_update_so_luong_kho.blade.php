@@ -51,9 +51,11 @@
 			Nhân viên tồn kho 
 			<select>
 			@foreach ($array as $each)
-				<option> {{$each->ten}} </option>
+				<option>  {{ Session::get('ten') }} </option>    
 			@endforeach
 			</select>
+			 
+			
 		</div>
 
 		<br>

@@ -12,6 +12,7 @@
 			<tr>
 				<td>Ảnh</td>
 				<td><input class="form-control" minlength="2"  type="text" name="anh"></td>
+				<td> <input type="file" name="anh"> </td>
 			</tr>
 			<tr>
 				<td>Số lượng nhập</td>

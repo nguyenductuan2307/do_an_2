@@ -40,6 +40,7 @@ class khocontroller extends Controller
         $array_nhap        = $rq->get('array_nhap');
         $array_xuat        = $rq->get('array_xuat');
         $ngay     = $rq->get('ngay');
+        $admin =$rq->get('ma_admin');
         
         foreach ($array_nhap as $ma_san_pham => $so_luong_nhap) {
             $kho = new KhoModel();
@@ -53,5 +54,10 @@ class khocontroller extends Controller
         }
         return redirect()->route('view_update_so_luong_kho',['ngay' => $ngay]);
     }
+
+    
+    
+    
+
 
 }

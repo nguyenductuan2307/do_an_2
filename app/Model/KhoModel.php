@@ -10,6 +10,8 @@ class KhoModel
 	public $ngay;
 	public $nhap;
 	public $xuat;
+	public $ma_admin;
+
 	public function delete(){
 		DB::delete('delete from kho where ma_san_pham = ? and ngay = ?',[
 			$this->ma_san_pham,
@@ -17,12 +19,13 @@ class KhoModel
 		]);
 	}
 	public function insert(){
-		DB::insert('insert into kho(ma_san_pham,ngay,nhap,xuat)
-			values (?,?,?,?)',[
+		DB::insert('insert into kho(ma_san_pham,ngay,nhap,xuat,ma_admin)
+			values (?,?,?,?,?)',[
 			$this->ma_san_pham,
 			$this->ngay,
 			$this->nhap,
-			$this->xuat
+			$this->xuat,
+			$this->ma_admin
 		]);
 	}
 	static function get_so_luong_truoc_ngay($ngay){
@@ -62,7 +65,10 @@ class KhoModel
 			");
 		return $array;
 	}
-
+	static function get_all(){
+		$array = DB::select("select * from kho");
+		return $array;
+	}
 	 
 
 }
