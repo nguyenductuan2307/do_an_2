@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Model\SanphamModel;
 use App\Model\KhoModel;
-
+use Exception;
 class sanphamcontroller extends Controller
 {
     function view_all(){
@@ -45,5 +45,16 @@ class sanphamcontroller extends Controller
         $san_pham -> update();
         return redirect()->route('view_all_san_pham');
 
+    }
+
+     function delete($ma){
+        try {
+            SanphamModel::delete($ma);
+            return redirect()->route('view_all_sanpham')->with("success","1");
+
+        } catch (Exception $e) {
+            return redirect()->route('view_all_sanpham')->with('error','1');
+        }
+        
     }
 }

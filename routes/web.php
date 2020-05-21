@@ -21,6 +21,8 @@ Route::group(['middleware' => 'CheckLogin'],function(){
 					route::post('sanpham/process_insert_san_pham','sanphamcontroller@process_insert_san_pham')->name('process_insert_san_pham');
 					Route::get('sanpham/view_update/{ma}','sanphamcontroller@view_update')->name('view_update_san_pham');
 					Route::post('sanpham/process_update/{ma}','sanphamcontroller@process_update')->name('process_update_san_pham');
+					Route::get('sanpham/delete/{ma}', 'sanphamcontroller@delete')->name('delete_sanpham');
+
 					/////////////////////////////////////////////////////////////////////////////////
 					//chọn ngày để tồn kho
 					Route::get('view_chon_kho_with_ngay','khocontroller@view_chon_kho_with_ngay')->name('view_chon_kho_with_ngay');

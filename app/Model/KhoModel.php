@@ -58,17 +58,19 @@ class KhoModel
 			SELECT 
 			ma_san_pham,
 			nhap,
-			xuat
+			xuat,
+			ten
 			FROM `kho`
+			join admin on admin.ma = kho.ma_admin
 			where ngay = '$ngay'
 			GROUP by ma_san_pham
 			");
 		return $array;
 	}
-	static function get_all(){
-		$array = DB::select("select * from kho");
-		return $array;
-	}
+	// static function get_all(){
+	// 	$array = DB::select("select * from kho");
+	// 	return $array;
+	// }
 	 
 
 }

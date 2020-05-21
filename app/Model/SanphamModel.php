@@ -28,4 +28,7 @@ class SanphamModel
 		$array = DB::select("select max(ma) as ma_lon_nhat from san_pham");
 		return $array[0]->ma_lon_nhat;
 	}
+
+	static function delete($ma){
+			DB::delete("delete from san_pham where ma= ? ",[$ma]); }
 }
